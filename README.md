@@ -90,3 +90,26 @@ null instanseof Object
 ```javascript
 typeof null
 ```
+
+```css
+/* use currentColor */
+a {
+  color: green;
+}
+a.office {
+  color: blue;
+}
+
+/* instead of */
+a:hover {
+  border: 1px solid green;
+}
+a.office:hover {
+  border: 1px solid blue;
+}
+
+/* use */
+a:hover {
+  border: 1px solid currentColor;
+}
+```
