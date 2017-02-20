@@ -90,6 +90,9 @@ null instanseof Object
 ```javascript
 typeof null
 ```
+```javascript
+typeof NaN
+```
 
 ```css
 /* use currentColor */
