@@ -116,3 +116,92 @@ a:hover {
   border: 1px solid currentColor;
 }
 ```
+
+```javascript
+(function(){
+  return typeof arguments;
+})();
+```
+
+```javascript
+var f = function g(){ return 23; };
+typeof g();
+```
+
+```javascript
+(function(x){
+  delete x;
+  return x;
+})(1);
+```
+
+```javascript
+var y = 1, x = y = typeof x;
+x;
+y;
+```
+
+```javascript
+(function f(f){
+  return typeof f();
+})(function(){ return 1; });
+```
+
+```javascript
+var foo = {
+  bar: function() { return this.baz; },
+  baz: 1
+};
+(function(){
+  return typeof arguments[0]();
+})(foo.bar);
+```
+
+```javascript
+var foo = {
+  bar: function(){ return this.baz; },
+  baz: 1
+}
+typeof (f = foo.bar)();
+```
+
+```javascript
+var f = (function f(){ return "1"; }, function g(){ return 2; })();
+typeof f;
+```
+
+```javascript
+var x = 1;
+if (function f(){}) {
+  x += typeof f;
+}
+x;
+```
+
+```javascript
+var x = [typeof x, typeof y][1];
+typeof typeof x;
+```
+
+```javascript
+(function(foo){
+  return typeof foo.bar;
+})({ foo: { bar: 1 } });
+```
+
+```javascript
+(function f(){
+ function f(){ return 1; }
+ return f();
+ function f(){ return 2; }
+})();
+```
+
+```javascript
+function f(){ return f; }
+new f() instanceof f;
+```
+
+```javascript
+with (function(x, undefined){}) length;
+```
