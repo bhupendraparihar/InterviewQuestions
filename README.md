@@ -205,3 +205,110 @@ new f() instanceof f;
 ```javascript
 with (function(x, undefined){}) length;
 ```
+```javascript
+var fruits = ['apple','orange'];
+
+basket = fruits;
+
+basket.push("mango");
+
+console.log(fruits.length); //
+console.log(basket.length);//
+```
+```javascript
+var word = "Javascript";
+var sentence = {
+  construct:function( word ){
+     return ?
+  },
+  word:"is"
+};
+console.log( sentence.construct("Awesome!") ); /// Javascript is Awesome! 
+```
+
+```javascript
+var obj;
+
+function foo(obj){
+obj = {x:"world"};
+}
+
+obj = {x:"hello"};
+foo(obj);
+
+console.log(obj);//?
+console.log(obj.x); //?
+```
+
+```javascript
+var x = (function(){
+  var temp = [];
+  for (var i=0;i <= 10;i++){
+    temp[i] = function (){
+      return ( i ) * ( i + 1 ) / 2;
+    }
+  }
+  return temp;
+})();
+console.log( typeof x[1] );//? 
+console.log( x[3]() );//?? 
+```
+
+```javascript
+var age = 101;
+var father = {
+  age: 98,
+  getAgeOfSon: function() {
+    var age = 40;
+    this.age = 60;
+    window.setTimeout(function(){
+      console.log( this.age );
+    }, 1000);
+  }
+}
+father.getAgeOfSon();//? 101
+```
+
+```javascript
+var dateOfBirth = 1985;
+
+function getDateOfBirth(){
+dateOfBirth = 2013;
+return;
+
+function dateOfBirth(){
+return dateOfBirth;
+}
+
+}
+
+getDateOfBirth();
+console.log(dateOfBirth);
+
+
+//console.log("Hello".display(5));
+String.prototype.display = function(r){var repeatStr="";for (i=0;i<r;i++){repeatStr += this.toString()} return repeatStr;}
+"hello".display(5)
+```
+
+```javascript
+var dateOfBirth = getDateOfBirth();
+function getDateOfBirth() {
+  function dateofbirth(){}
+  var dateofbirth
+  
+  return dateOfBirth; // undefined // 
+  //  dateOfBirth = 1985;
+    //function dateOfBirth() {}
+    //var dateOfBirth = 2013;
+}
+console.log(typeof dateOfBirth);//?
+
+
+(function(){
+  var a = b = 3;
+})();
+
+console.log("a defined? " + (typeof a !== 'undefined'));
+console.log("b defined? " + (typeof b !== 'undefined'));
+```
